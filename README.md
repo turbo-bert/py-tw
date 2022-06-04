@@ -15,8 +15,10 @@ It is brutally simple. Have `reportlab` installed of course.
     pdf = tw.DINA4()
     
     # starting with page 1, not 0
-    pdf.page(1).text(1, 1, 'Hello World!')
+    pdf.page(1).text(1, 1, 'Hello World!') # simple text to row 1.. , column 1.. from topleft
     pdf.build('output.pdf')
 
 
 # Installation
+
+Currently only copy the `tw` folder (consists only the `__init__.py`) and have `reportlab` installed.
