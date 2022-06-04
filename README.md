@@ -8,4 +8,8 @@ Of course and only `reportlab`.
 
 # Example
 
+It is brutally simple. Have `reportlab` installed of course.
+
+
+
 # Installation
