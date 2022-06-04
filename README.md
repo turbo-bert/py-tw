@@ -1,4 +1,4 @@
-# Python3 Lib `tw`
+# `tw` - A Ultra Leightweight PDF Typewriter for Python
 
 This is a very insignificant library I personally use for PDF generation but I think it is not worth to be published on PIP but you might find it usefuly anyways.
 
