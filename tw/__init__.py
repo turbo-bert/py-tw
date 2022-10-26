@@ -383,3 +383,50 @@ class Presentation:
         for page in self._pages:
             page.text(1, 80, "%d / %d" % (i, n))
             i += 1
+
+
+
+class FlatMaker:
+
+    def __init__(self, the_doc):
+        self.the_doc = the_doc
+        self.cpage = 1
+        self.ccol = 1
+        self.cline = 1
+
+    def to(self, line=None, col=None, page=None):
+        if line is not None:
+            self.cline = line
+        if col is not None:
+            self.ccol = col
+        if page is not None:
+            self.cpage = page
+        return self
+
+    def framebox(self, lines, subtitle=None):
+        lines_ = lines
+        h = len(lines_) + 2
+        w = 0
+        for line in lines_:
+            if len(line) > w:
+                w = len(line)
+
+        w += 2
+
+        line_start = self.cline
+        col_start = self.ccol
+
+        self.the_doc.page(self.cpage).text(line_start,col_start, ' %s ' % (w*'_'))
+        self.the_doc.page(self.cpage).text(line_start+1,col_start, '|%s|' % (w*' '))
+
+        for i in range(0,len(lines_)):
+            self.the_doc.page(self.cpage).text(line_start+2+i,col_start, '|%s|' % (w*' '))
+            self.the_doc.page(self.cpage).text(line_start+2+i,col_start+2, lines_[i])
+
+
+        self.the_doc.page(self.cpage).text(line_start+h,col_start, '|%s|' % (w*' '))
+        self.the_doc.page(self.cpage).text(line_start+h,col_start, ' %s ' % (w*'_'))
+        
+        if subtitle is not None:
+            self.the_doc.page(self.cpage).text(line_start+h+1,col_start+w-len(subtitle)+2,subtitle)
+        return self
