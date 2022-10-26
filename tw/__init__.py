@@ -430,3 +430,13 @@ class FlatMaker:
         if subtitle is not None:
             self.the_doc.page(self.cpage).text(line_start+h+1,col_start+w-len(subtitle)+2,subtitle)
         return self
+
+    def fixbox(self, lines, subtitle=None, w=10, h=10):
+        lines_ = []
+        for line in lines:
+            x = line + ' ' * (w-len(line))
+            lines_.append(x)
+        while len(lines_) < h:
+            lines_.append('')
+
+        return self.framebox(lines_, subtitle=subtitle)
