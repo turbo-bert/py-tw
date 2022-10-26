@@ -21,4 +21,4 @@ It is brutally simple. Have `reportlab` installed of course.
 
 # Installation
 
-Currently only copy the `tw` folder (consists only the `__init__.py`) and have `reportlab` installed.
+Did I say lightweight? Only copy the `tw` folder (consists only the `__init__.py`) and have `reportlab` installed.
