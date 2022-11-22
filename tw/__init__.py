@@ -17,6 +17,7 @@ __all__ = [
     'Page',
     'Document7293',
     'Document50136',
+    'Document103136',
     'Doc',
     'DINA4',
     'DINA3',
@@ -232,7 +233,7 @@ class Document7293:
             page.text(1, 80, "%d / %d" % (i, n))
             i += 1
 
-class DocumentA3:
+class Document103136:
 
     def __init__(self, is_landscape=False):
         global pagecfg
@@ -410,7 +411,7 @@ def DINA4():
     return Document7293()
 
 def DINA3():
-    return DocumentA3()
+    return Document103136()
 
 def DINA4L():
     return Document7293(is_landscape=True)
